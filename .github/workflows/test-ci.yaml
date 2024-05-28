@@ -24,14 +24,14 @@
               -H "Authorization: Bearer ${{ secrets.RV_PROIVDED_TOKEN }}" \
               https://api.github.com/repos/runtimeverification/_kaas_external-test-bed/actions/workflows/compute-ci.yaml/dispatches \
               -d '{
-                "ref": "master",
+                "ref": "main",
                 "inputs": {
-                "branch_name": "'"${{ github.event.pull_request.head.sha }}"'",
-                "extra_args": "script",
-                "statuses_sha": "'$sha'",
-                "org": "TheBlueLizard",
-                "repository": "_audits_external-test-bed",
-                "auth_token": "'"${{ secrets.LIDO_STATUS_TOKEN }}"'"
+                  "branch_name": "'"${{ github.event.pull_request.head.sha }}"'",
+                  "extra_args": "script",
+                  "statuses_sha": "'$sha'",
+                  "org": "TheBlueLizard",
+                  "repository": "_audits_external-test-bed",
+                  "auth_token": "'"${{ secrets.LIDO_STATUS_TOKEN }}"'"
                 }
               }')
             
